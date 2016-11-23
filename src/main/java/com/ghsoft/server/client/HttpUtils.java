@@ -12,17 +12,15 @@ import javax.net.ssl.X509TrustManager;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.utils.URLEncodedUtils;
+import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.conn.scheme.Scheme;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
@@ -30,6 +28,18 @@ import com.ghsoft.api.conf.Config;
 
 @SuppressWarnings("deprecation")
 public class HttpUtils {
+	
+	private static HttpUtils ins=null;
+	
+	private HttpUtils(){}
+	
+	public synchronized static HttpUtils getInstance(){
+		if(ins==null){
+			ins=new HttpUtils();
+		}
+		return ins;
+	}
+	
 	
 	
 	public String httpPostNameValue(String url,List<NameValuePair> list){
@@ -39,15 +49,15 @@ public class HttpUtils {
 //			if (url.toUpperCase().indexOf("HTTPS://") != -1) {
 //				enableSSL(httpClient);
 //			}
-			HttpPost httpPost = new HttpPost(url);
+			
+			URIBuilder uriBuilder = new URIBuilder(url);
+			
+			uriBuilder.addParameters(list);			
+			HttpPost httpPost = new HttpPost(uriBuilder.build());
 			//请求配置
 			RequestConfig requestConfig =this.getRequestConfig();
 			//设置头
 			this.setHeader(httpPost, requestConfig);	
-			// 将参数进行UTF-8编码,以便传输中文
-//			String entityValue = EntityUtils.toString();
-//			StringEntity se = new StringEntity(entityValue);			
-			httpPost.setEntity(new UrlEncodedFormEntity(list, HTTP.UTF_8));
 			response =httpClient.execute(httpPost);
 			return this.factory(response);
 		} catch (Exception e) {
@@ -112,7 +122,7 @@ public class HttpUtils {
 	
 	private void setHeader(HttpPost httpPost,RequestConfig requestConfig)throws Exception{
 		httpPost.setConfig(requestConfig);
-		httpPost.addHeader(HTTP.CONTENT_TYPE, "application/json;charset=UTF-8");
+		httpPost.addHeader(HTTP.CONTENT_TYPE, "application/json;charset=UTF-8");		
 	}
 	
 	

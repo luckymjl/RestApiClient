@@ -1,6 +1,6 @@
 package com.ghsoft.api.conf;
 
-import com.ghsoft.api.AuthApi;
+import com.ghsoft.api.impl.AuthApi;
 import com.ghsoft.factory.entity.AuthEntity;
 
 

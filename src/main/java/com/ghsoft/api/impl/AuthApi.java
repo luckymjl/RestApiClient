@@ -1,4 +1,4 @@
-package com.ghsoft.api;
+package com.ghsoft.api.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
+import com.ghsoft.api.Api;
 import com.ghsoft.api.conf.Config;
 import com.ghsoft.factory.entity.AuthEntity;
 

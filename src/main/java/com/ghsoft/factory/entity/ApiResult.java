@@ -3,10 +3,10 @@ package com.ghsoft.factory.entity;
 
 
 
-public class ApiResult<T> {
+public class ApiResult {
 	private Integer state;
 	private String message;
-	private T result;
+	private Object result;
 	private Integer code=0;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -26,11 +26,11 @@ public class ApiResult<T> {
 		this.message = message;
 	}
 
-	public T getResult() {
+	public Object getResult() {
 		return  result;
 	}
 
-	public void setResult(T result) {
+	public void setResult(Object result) {
 		this.result = result;
 	}
 

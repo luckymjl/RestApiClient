@@ -8,29 +8,19 @@ public class AuthEntity extends BaseEntity implements Serializable {
 
 	/** Default Parameter */
 
-	private String tokenId;
+	private String accessToken;
 	private Long expiresIn;
-
-	
 
 	public AuthEntity() {
 		super();
 	}
 
-	public AuthEntity(String id, String tokenId, Long expiresIn) {
-		super();	
-		this.tokenId = tokenId;
-		this.expiresIn = expiresIn;
+	public String getAccessToken() {
+		return accessToken;
 	}
 
-
-
-	public String getTokenId() {
-		return tokenId;
-	}
-
-	public void setTokenId(String tokenId) {
-		this.tokenId = tokenId;
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
 	}
 
 	public Long getExpiresIn() {
@@ -40,8 +30,5 @@ public class AuthEntity extends BaseEntity implements Serializable {
 	public void setExpiresIn(Long expiresIn) {
 		this.expiresIn = expiresIn;
 	}
-
-
-	
 
 }
