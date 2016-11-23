@@ -12,7 +12,7 @@ import com.ghsoft.factory.entity.ApiResult;
 import com.ghsoft.factory.entity.BaseEntity;
 import com.ghsoft.server.client.HttpUtils;
 
-public abstract class Api<T extends BaseEntity>{
+public abstract class EntityApi<T extends BaseEntity>{
 	
 	private static HttpUtils http =HttpUtils.getInstance();
 	

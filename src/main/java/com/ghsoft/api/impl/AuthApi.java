@@ -6,11 +6,11 @@ import java.util.List;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
-import com.ghsoft.api.Api;
+import com.ghsoft.api.EntityApi;
 import com.ghsoft.api.conf.Config;
 import com.ghsoft.factory.entity.AuthEntity;
 
-public class AuthApi extends Api<AuthEntity> {
+public class AuthApi extends EntityApi<AuthEntity> {
 	
 	
 	
