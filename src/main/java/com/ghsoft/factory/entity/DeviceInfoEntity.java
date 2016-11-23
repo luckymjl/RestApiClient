@@ -1,6 +1,6 @@
 package com.ghsoft.factory.entity;
 
-public class DeviceInfoEntity extends BaseEntity{
+public class DeviceInfoEntity extends ResultEntity{
 
 	/**
 	 * 

@@ -37,5 +37,10 @@ public class Configuration {
 		Config.setAuth(entity);
 	}
  
+	
+	public static void updateAuth(){
+		AuthEntity entity=AuthApi.getInstance().getAuth();
+		Config.setAuth(entity);
+	}
 
 }

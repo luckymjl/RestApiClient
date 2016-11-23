@@ -2,7 +2,7 @@ package com.ghsoft.factory.entity;
 
 import java.io.Serializable;
 
-public class AuthEntity extends BaseEntity implements Serializable {
+public class AuthEntity extends ResultEntity implements Serializable {
 
 	private static final long serialVersionUID = 2925827259232915751L;
 
