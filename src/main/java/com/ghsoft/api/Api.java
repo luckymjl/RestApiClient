@@ -12,7 +12,7 @@ import com.ghsoft.api.conf.Config;
 import com.ghsoft.factory.entity.ApiCode;
 import com.ghsoft.factory.entity.ApiResult;
 import com.ghsoft.factory.entity.ResultEntity;
-import com.ghsoft.server.client.HttpUtils;
+import com.ghsoft.server.util.HttpUtils;
 
 public abstract class Api<T extends ResultEntity>{
 	

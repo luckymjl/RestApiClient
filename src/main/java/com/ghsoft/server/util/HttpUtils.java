@@ -1,4 +1,4 @@
-package com.ghsoft.server.client;
+package com.ghsoft.server.util;
 
 import java.io.IOException;
 import java.net.URLEncoder;
