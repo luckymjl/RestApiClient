@@ -14,7 +14,7 @@ import com.ghsoft.factory.entity.ApiResult;
 import com.ghsoft.factory.entity.ResultEntity;
 import com.ghsoft.server.client.HttpUtils;
 
-public abstract class EntityApi<T extends ResultEntity>{
+public abstract class Api<T extends ResultEntity>{
 	
 	private static HttpUtils http =HttpUtils.getInstance();
 	
